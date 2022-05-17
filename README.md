@@ -16,6 +16,7 @@ Auburn University 2022 REU on Smart UAVs
     2. Put together images to form full path and have a designated distance per grid/pixel(paper said 2 meters per).
     2. Might need a way to pick the color for correct path/land.
     3. Possibly take into consideration the chagns in elevation for strain if we intend on relaying that information to not just air but also ground.(just a thought) 
+    4. for the city scape we need to add in the max heights for if a building or structure exceeds that
 
 (possible mthod is using OpenCV libary to create binary representation of image then use those digits to repersent obstructions or clear then use the FAA* algothrim to find path. Then compair this to a analisis of the hight of the sroundings to find ultmatly the best hight)?
 use a conversion of lidar distance to unit of measure and possibly use that for both distance travled and controling the direction of the drone.
