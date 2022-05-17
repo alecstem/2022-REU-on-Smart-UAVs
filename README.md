@@ -5,7 +5,7 @@ Auburn University 2022 REU on Smart UAVs
 
 ###### Alec Pugh & Luke Bower
 
-### Shortest Path from Satellite Imagery for Low-flight Operation
+### Shortest Path from Satellite Imagery for Height Restricted Operation
 * We talked about this.
     1. Use a method to process satellite imagery.
     1. Create a grid with likely obstacles based on altitude.
