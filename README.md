@@ -26,5 +26,7 @@ use a conversion of lidar distance to unit of measure and possibly use that for 
 
 store las coridnates with the grided x-y equlivant then after computing shortest path use the look up table to find the las x-y assoitation with grid x-y and convert the coridnates.
 
+Use OpenTopogrphy api to insert data/cordinates.
+
 The map coridnate system is wgs84 web mercator [epsg: 3857] and can be converted to and from lats and longs. *all values are in meters*
 The height is based on NAVD88 is referenced to the Mean Sea Level at one tide station located at Father Point in Rimouski, Quebec.
