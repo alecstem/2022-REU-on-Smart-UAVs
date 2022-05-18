@@ -26,6 +26,8 @@ use a conversion of lidar distance to unit of measure and possibly use that for 
 
 store las coridnates with the grided x-y equlivant then after computing shortest path use the look up table to find the las x-y assoitation with grid x-y and convert the coridnates.
 
+create a return path if needed(so save previous waypoints along the travled path)
+
 Use OpenTopogrphy api to insert data/cordinates.
 
 to create a variabled hight evauation reestablish a fastest path at every difrent frame of height to then work to create diagnal lines between motion.
