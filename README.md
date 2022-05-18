@@ -28,5 +28,7 @@ store las coridnates with the grided x-y equlivant then after computing shortest
 
 Use OpenTopogrphy api to insert data/cordinates.
 
+to create a variabled hight evauation reestablish a fastest path at every difrent frame of height to then work to create diagnal lines between motion.
+
 The map coridnate system is wgs84 web mercator [epsg: 3857] and can be converted to and from lats and longs. *all values are in meters*
 The height is based on NAVD88 is referenced to the Mean Sea Level at one tide station located at Father Point in Rimouski, Quebec.
