@@ -29,3 +29,4 @@ to create a variabled hight evauation reestablish a fastest path at every difren
 
 The map coridnate system is wgs84 web mercator [epsg: 3857] and can be converted to and from lats and longs. *all values are in meters*
 The height is based on NAVD88 is referenced to the Mean Sea Level at one tide station located at Father Point in Rimouski, Quebec.
+For z coridnates it is meters off of sea level just find the ground point and subtract it from all others and tehn you have teh meter height.
