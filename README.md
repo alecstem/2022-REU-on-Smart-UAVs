@@ -8,8 +8,8 @@ Auburn University 2022 REU on Smart UAVs
 ### 3D UAV Path Planning using Aerial/Incomplete Point Clouds
 
 <p align="center">
-  <img src="code/cross.gif" width="300" height="400" >
-  <img src="code/cross4.gif" width="300" height="400" >
+  <img src="code/cross4.gif" width="400" height="300" >
+  <img src="images/cross_auburn.gif" width="400" height="300" >
 </p>
 
 _add stuff about the process_
