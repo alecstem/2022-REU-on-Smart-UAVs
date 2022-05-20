@@ -5,7 +5,7 @@ Auburn University 2022 REU on Smart UAVs
 
 ###### Alec Pugh & Luke Bower
 
-### 3D UAV Path Planning using Aerial LiDAR Data
+### 3D UAV Path Planning using Aerial/Incomplete Point Clouds
 
 <p align="center">
   <img src="code/cross.gif" width="300" height="400" >
