@@ -8,9 +8,9 @@
 ## Obstacles
 
 * Initially wanted to use satellite imagery but had to switch to point clouds obtained from LiDAR to retrieve height data.
-* Matching up the pixels in the image to the occupancy grid took a while.
+* Creating the images from a grid of ones and zeros took a while due to matching issues.
 
 ## Objectives
 
 * Make A* smarter (add optimization, height checks, etc.)
-* Finish API integration
+* Finish OpenTopography API integration
