@@ -1,9 +1,11 @@
 # Week 2
 
 ## End Goal
+
 * Create an algorithem that reads in two GPS points and creates the most efficent 3D path for a UAV to terverse the points given in reguards to the time, distance, and energy useage.
 
 ## Progress Report
+
 * Took point cloud data from LiDAR scans, converted it into a grid, and wrote code to seperate layers based on height.
 * Implemented A* on each height layer and created a visualization.
 * Took in two GPS points and found the database that the LiDAR scans are located.
@@ -19,16 +21,20 @@
 * Accessing files from API and the servers they are located on.
 
 ## How We Faced These Obstacles
-* We ...
 
-## Objectives
+*  ALEC CAN YOU ADD YOUR SLOUTION HERE PLEASE :)
+*  To solve the conversion factors we had to do research on the way that LiDAR recives data and the way it converts the values from GPS to the web version of ... to GPS and vice versa. We also had to figure out the relationship of the Z axis. We found that it is baised off of the ... system and relates equivalently to meters above sea levle so we take our ground point as a base number and subtract that from all others to find the change in height from the measurment in meters.
+* As we got started on this project we wanted to make it all happen in a streamlined way. For us that means small file sizes and all in one place. To acchive this we needed to work with the database that holds the LiDAR data and thier API. However, thier API is not very devloped so we are activly working with a Rose Pearson in New Zealand to create a library to solve these issues.
+
+## Future Objectives
 
 * Make A* smarter (add optimization, height checks, etc.)
 * Finish OpenTopography API integration
 * Intgrate an energy consumption factor in the path planning.
 
 ## Weekly Evaluation
-* This week went ...
+
+* This week went phenomenal. We worked very diligently to formulate a plan and outline of our project finding large flaws with the original idea and working to find sloutions. Once that was done we stared to split our days into half implmentation of code and the other half literary anlysis. This allowed for us to move at a comfortable pace of seeing progress and addressing riseing questions as well as how we can improve the research that has already been preformed. We were able to have some of the very basic elements of our program run and this led us to a better idea of what is possible with our plan. We had some bigger problems arrise that we are still having to address, however, overall this week was very productive and we hope to continue to have weeks like this as we progress.
 
 
 <p align="center">
