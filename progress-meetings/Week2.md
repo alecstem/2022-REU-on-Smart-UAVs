@@ -2,7 +2,7 @@
 
 ## End Goal
 
-* Create an algorithem that reads in two GPS points and creates the most efficent 3D path for a UAV to terverse the points given in reguards to the time, distance, and energy useage.
+* Create an algorithm that reads in two GPS points and creates the most efficient 3D path for a UAV to traverse the points given with regard to the time, distance, and energy usage.
 
 ## Progress Report
 
@@ -14,15 +14,15 @@
 
 ## Obstacles
 
-* Initially wanted to use satellite imagery but had to switch to point clouds obtained from LiDAR to retrieve height data.
+* Initially wanted to use satellite imagery but had to switch to point clouds obtained from LiDAR scans to retrieve height data.
 * Finding a resource that would let us obtain point cloud data for anywhere we wanted was a challenge.
-* Creating the images from a grid of ones and zeros took a while due to matching issues.
+* Creating the images from a 2D array of ones and zeros took a while due to matching issues.
 * Finding the conversion factors for the LiDAR x, y, and z points into GPS cordinates.
 * Accessing files from API and the servers they are located on.
 
 ## How We Faced These Obstacles
 
-*  ALEC CAN YOU ADD YOUR SLOUTION HERE PLEASE :)
+*  We found OpenTopography, a website that houses LiDAR datasets from the USGS 3DEP project.
 *  To solve the conversion factors we had to do research on the way that LiDAR recives data and the way it converts the values from GPS to the web version of ... to GPS and vice versa. We also had to figure out the relationship of the Z axis. We found that it is baised off of the ... system and relates equivalently to meters above sea levle so we take our ground point as a base number and subtract that from all others to find the change in height from the measurment in meters.
 * As we got started on this project we wanted to make it all happen in a streamlined way. For us that means small file sizes and all in one place. To acchive this we needed to work with the database that holds the LiDAR data and thier API. However, thier API is not very devloped so we are activly working with a Rose Pearson in New Zealand to create a library to solve these issues.
 
