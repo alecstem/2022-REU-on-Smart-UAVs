@@ -1,5 +1,8 @@
 # Week 2
 
+## End Goal
+* Create an algorithem that reads in two gps points and creates the most efficent 3D path for a UAV to terverse the points given in reguards to the time, distance, and energy useage.
+
 ## Progress Report
 * Took point cloud data from LiDAR scans, converted it into a grid, and wrote code to seperate layers based on height.
 * Implemented A* on each height layer and created a visualization.
@@ -20,6 +23,9 @@
 * Make A* smarter (add optimization, height checks, etc.)
 * Finish OpenTopography API integration
 * Intgrate an energy consumption factor in the path planning.
+
+## Weekly Evaluation
+* This week went ...
 
 
 <p align="center">
