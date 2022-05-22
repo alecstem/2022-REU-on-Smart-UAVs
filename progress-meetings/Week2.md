@@ -3,6 +3,8 @@
 ## Progress Report
 * Took point cloud data from LiDAR scans, converted it into a grid, and wrote code to seperate layers based on height.
 * Implemented A* on each height layer and created a visualization.
+* Took in two gps points and found the database that the LiDAR scans are located.
+* Wrote conversion code for all types of points used.
 * Performed literary analysis on our topic and adjacent topics.
 
 ## Obstacles
@@ -10,11 +12,14 @@
 * Initially wanted to use satellite imagery but had to switch to point clouds obtained from LiDAR to retrieve height data.
 * Finding a resource that would let us obtain point cloud data for anywhere we wanted was a challenge.
 * Creating the images from a grid of ones and zeros took a while due to matching issues.
+* Finding the conversion factors for the LiDAR x, y, and z points into gps cordinates.
+* Accessing files from API and the servers they are located on.
 
 ## Objectives
 
 * Make A* smarter (add optimization, height checks, etc.)
 * Finish OpenTopography API integration
+* Intgrate an energy consumption factor in the path planning.
 
 
 <p align="center">
