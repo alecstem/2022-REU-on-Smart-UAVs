@@ -15,3 +15,14 @@
 
 * Make A* smarter (add optimization, height checks, etc.)
 * Finish OpenTopography API integration
+
+
+<p align="center">
+  <img src="https://github.com/alecstem/2022-REU-on-Smart-UAVs/blob/main/images/point%20cloud.png" width="300" height="200" >
+  <img src="https://github.com/alecstem/2022-REU-on-Smart-UAVs/blob/main/images/before_astar_auburn.gif" width="300" height="200" >
+  <img src="https://github.com/alecstem/2022-REU-on-Smart-UAVs/blob/main/images/before.png" width="300" height="200" >
+  <img src="https://github.com/alecstem/2022-REU-on-Smart-UAVs/blob/main/images/after.png" width="300" height="200" >
+  <img src="https://github.com/alecstem/2022-REU-on-Smart-UAVs/blob/main/images/cross_auburn_buffer2.gif" width="300" height="200" >
+  
+  
+</p>
