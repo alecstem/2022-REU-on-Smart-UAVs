@@ -1,12 +1,12 @@
 # Week 2
 
 ## End Goal
-* Create an algorithem that reads in two gps points and creates the most efficent 3D path for a UAV to terverse the points given in reguards to the time, distance, and energy useage.
+* Create an algorithem that reads in two GPS points and creates the most efficent 3D path for a UAV to terverse the points given in reguards to the time, distance, and energy useage.
 
 ## Progress Report
 * Took point cloud data from LiDAR scans, converted it into a grid, and wrote code to seperate layers based on height.
 * Implemented A* on each height layer and created a visualization.
-* Took in two gps points and found the database that the LiDAR scans are located.
+* Took in two GPS points and found the database that the LiDAR scans are located.
 * Wrote conversion code for all types of points used.
 * Performed literary analysis on our topic and adjacent topics.
 
@@ -17,6 +17,9 @@
 * Creating the images from a grid of ones and zeros took a while due to matching issues.
 * Finding the conversion factors for the LiDAR x, y, and z points into gps cordinates.
 * Accessing files from API and the servers they are located on.
+
+## How We Faced These Obstacles
+* We ...
 
 ## Objectives
 
