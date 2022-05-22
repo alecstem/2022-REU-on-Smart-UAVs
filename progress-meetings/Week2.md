@@ -15,7 +15,7 @@
 * Initially wanted to use satellite imagery but had to switch to point clouds obtained from LiDAR to retrieve height data.
 * Finding a resource that would let us obtain point cloud data for anywhere we wanted was a challenge.
 * Creating the images from a grid of ones and zeros took a while due to matching issues.
-* Finding the conversion factors for the LiDAR x, y, and z points into gps cordinates.
+* Finding the conversion factors for the LiDAR x, y, and z points into GPS cordinates.
 * Accessing files from API and the servers they are located on.
 
 ## How We Faced These Obstacles
