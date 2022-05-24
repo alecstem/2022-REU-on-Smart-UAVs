@@ -1,5 +1,7 @@
 #this allows for las cordinates to go to lats and longs
 # and then back if needed
+import pathlib
+import typing
 
 import geopandas
 from geoapis import lidar
@@ -87,7 +89,7 @@ myfile.close()
 
 str = (str(response.json()))
 arr = str.split('\'')
-print(arr[7])
+print(arr[7])#7 is the name
 
 #jsondata = str(response.json())#""""[
  #{
@@ -122,14 +124,10 @@ print(arr[7])
 #import pathlib
 #import typing
 
-#import geoapis.lidar
+import geoapis.lidar
 
-#lidar_fetcher = geoapis.lidar.OpenTopography(cache_path=r"local/path/to/folder/to/save/files", verbose=True)
-#lidar_fetcher.run(arr[7])#USGS LPC AL 25Co B3 2017
-
-
-
-
+lidar_fetcher = geoapis.lidar.OpenTopography(cache_path=r"C:\Users\lcbba\OneDrive\Desktop\laz_files", verbose=True)
+lidar_fetcher.run(arr[25])  # USGS LPC AL 25Co B3 2017
 
 
 class OpenTopography:
@@ -140,13 +138,15 @@ class OpenTopography:
     download under any dataset.
     """
 
-    #def __init__(self, cache_path: typing.Union[str, pathlib.Path],
-     #            search_polygon: geopandas.geodataframe.GeoDataFrame, redownload_files: bool = False,
-      #           download_limit_gbytes: typing.Union[int, float] = 100, verbose: bool = False):
+    def __init__(self, cache_path: typing.Union[str, pathlib.Path],
+                 search_polygon: geopandas.geodataframe.GeoDataFrame, redownload_files: bool = False,
+                 download_limit_gbytes: typing.Union[int, float] = 100, verbose: bool = False):
 
-        #...
+        ...
 
-    #def run(self):
-        #""" Download LiDAR dataset(s) either within a search_polygon, by name, or both """
+    def run(self):
+        """ Download LiDAR dataset(s) either within a search_polygon, by name, or both """
 
 #lidar.OpenTopography('ot_CL1_WLG_2013_1km_094045.laz')
+
+
