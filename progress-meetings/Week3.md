@@ -13,9 +13,9 @@
 * We worked on our paper.
 
 ## Obstacles
-* We faced plently to bugs this week some even taking a day and a half to fix.
+* We faced plently of bugs this week, some even taking a day and a half to fix.
 * It took a while to convert A* from working in a 2D environment into 3D.
-* We are having problems downloading a limited ammount of files from the API and servers to be able to create a fully functinal process.
+* We are having problems downloading a limited amount of files from the API and servers to be able to create a fully functinal process.
 * Re-evaluating the A* when we find an obstacle in the way and making the algorithm able to run fast enough to fix the path while in flight.
 
 ## How We Faced These Obstacles
@@ -24,13 +24,13 @@
 
 ## Future Objectives
 * Get the downloading working and create more of a together system for the whole process.
-* Get the object dectection and avoidence working in a simulation.
+* Get the object dectection and avoidance working in a simulation.
 * Speed up the computational time of the program.
 * Start to add in more factors for A* to have more defined constraints..
 * Get a good simulation working for the program.
 
 ## Weekly Evaluation
-* This week was very good. We faced many more problems than the week befor but we were able to keep our heads up and persever through the trials and still make some progress every day. We have a much better understanding of how our program should work and operate leading us to both be able to work on seprate parts and it still come together smoothly. Overall, this week was very good and we made solid progress and hope that the trend of these past few weeks contine. 
+* This week was very good. We faced many more problems than the week before but we were able to keep our heads up and persever through the trials and still make some progress every day. We have a much better understanding of how our program should work and operate leading us to both be able to work on seperate parts and it still come together smoothly. Overall, this week was very good and we made solid progress and hope that the trend of these past few weeks continue. 
 
 <p align="center">
   <img src="https://github.com/alecstem/2022-REU-on-Smart-UAVs/blob/main/images/point%20cloud.png" width="300" height="200" >
