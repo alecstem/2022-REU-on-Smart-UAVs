@@ -8,6 +8,7 @@
 * Added primitive object detection / avoidance in the simulation using euclidian distance.
 * Current avoidance procedure: sample best avoidance path at every waypoint. If object is encountered, move to avoidance path and then recalculate A*.
 * Began working on presentation slides for next week.
+* Was able to incorprate Bezier curves to the path to smooth it out.
 * Was able to download limited number of Laz files from data bases to create a smooth process from end to end.
 
 ## Obstacles
