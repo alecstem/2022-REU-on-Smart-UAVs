@@ -8,7 +8,7 @@
 * Added primitive object detection / avoidance in the simulation using point cloud data and euclidian distance.
 * Current avoidance procedure: sample best avoidance path at every point. If object is encountered, pivot to avoidance path and then recalculate A*.
 * Added path smoothing using Bezier curves. We were using an additional distance calculation to initially make the path smoother without Bezier, but we were able to remove that and it make our program run a lot faster 
-* Can now download a limited number of .laz files from databases.
+* Can now download a controled number of .laz files from databases.
 * Began working on presentation slides for next week.
 
 ## Obstacles
