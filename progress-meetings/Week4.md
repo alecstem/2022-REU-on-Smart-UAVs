@@ -5,7 +5,7 @@
 * Create an algorithm that reads in two GPS points and creates the most efficient 3D path for a UAV to traverse the points given with regard to the time, distance, and energy usage from aerially obtained LiDAR scans and the ablity to change course mid-flight if the best path is obstructed.
 
 ## Progress Report
-* Added primitive object detection / avoidance in the simulation using point cloud data and euclidian distance.
+* Added primitive collision detection / avoidance in the simulation using point cloud data and euclidian distance.
 * Current avoidance procedure: sample best avoidance path at every waypoint. If object is encountered, pivot to avoidance path and then recalculate best path.
 * Added path smoothing using Bezier curves. ~We were using an additional distance calculation to initially make the path smoother without Bezier, but we were able to remove that and it make our program run a lot faster~ <-- path without additional sqrt looks strange.
 * Can now download a controlled number of .laz files from databases.
