@@ -6,7 +6,10 @@
 
 ## Progress Report
 * Finished introduction for midterm paper.
+* Finished problem statement and motivation for midterm paper.
+* Currently working on Literary Analysis.
 * Finished presentation slides for this week.
+* Created website for midterm.
 
 ## Obstacles
 * 
