@@ -11,6 +11,7 @@
 * Currently working on Literary Analysis.
 * Finished presentation slides for this week.
 * Created website for midterm.
+* Implemented limmited file downloads from API
 
 ## Obstacles
 * 
