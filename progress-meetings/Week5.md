@@ -8,12 +8,13 @@
 * Updated 3D obstacle matrix if obstacle is detected before recalculating best path.
 * Finished introduction for midterm paper.
 * Finished problem statement and motivation for midterm paper.
-* Currently working on Literary Analysis.
+* Finished Literary Analysis.
+* Working on process.
 * Finished presentation slides for this week.
 * Created website for midterm.
 
 ## Obstacles
-* 
+* Improving our understanding of previous research and process.
 
 ## Future Objectives
 * Work more on collision avoidance.
