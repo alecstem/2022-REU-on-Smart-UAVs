@@ -1,3 +1,7 @@
+"""
+Contains functions for path smoothing (Bezier curve).
+Code modified from https://github.com/rparak/Bezier_Curve/
+"""
 import numpy as np
 
 def Binomial_Coefficient(n, k):
