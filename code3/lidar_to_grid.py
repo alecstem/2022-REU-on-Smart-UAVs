@@ -2,6 +2,10 @@
 Converts a LIDAR LAS file to an
 ASCII DEM.  Interpolation is used
 to account for data loss.
+
+Source: Joel Lawhead. Learning Geospatial Analysis with Python. Birmingham, United Kingdom: Packt Pub-
+lishing, 2019.
+
 """
 
 # http://git.io/vOERW
