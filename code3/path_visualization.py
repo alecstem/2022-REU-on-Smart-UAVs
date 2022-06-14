@@ -1,6 +1,6 @@
 """
 This code visualizes the shortest path in 3D
-with the point cloud.
+with the point cloud, and contains collision detection loop.
 """
 
 import open3d as o3d
