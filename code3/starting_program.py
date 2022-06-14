@@ -1,3 +1,7 @@
+"""
+This code takes in the starting lats and longs and finds the json file using the api then downloads the file from geo_testing after that it passes 
+the data needed to continue the process
+"""
 import requests
 import math
 import utm
