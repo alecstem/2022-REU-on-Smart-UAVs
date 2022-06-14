@@ -1,3 +1,6 @@
+"""
+This code downloads the laz file from the database found from the .json 
+"""
 import urllib
 import pathlib
 import laspy
