@@ -1,3 +1,6 @@
+"""
+Contains functions for avoidance path calculation.
+"""
 
 def find_avoidances(matrix, best_path):
     # x y z
