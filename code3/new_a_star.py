@@ -1,3 +1,6 @@
+"""
+Code for A* algorithm. Modified from https://bekaykang.github.io/posts/Astar-3d-algorithm/
+"""
 import numpy as np
 import heapq
 import time
