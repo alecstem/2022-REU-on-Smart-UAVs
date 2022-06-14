@@ -1,5 +1,5 @@
 """
-This code will add a buffer (using BFS) to account for drone size.
+Code for generating 3D matrix + BFS implementation for horizontal buffer.
 """
 from PIL import Image, ImageOps, ImageDraw
 from laspy.file import File
