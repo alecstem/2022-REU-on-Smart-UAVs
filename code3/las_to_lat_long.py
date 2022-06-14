@@ -1,3 +1,7 @@
+"""
+Contains functions converting WGS 84
+coordinates to lat/long using the utm library.
+"""
 import utm
 
 
