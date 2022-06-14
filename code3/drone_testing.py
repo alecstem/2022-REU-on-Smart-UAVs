@@ -1,3 +1,7 @@
+"""
+This code opens your command line and connects the drone to a port connecting mission planner and your script. It then running parrallel sends the drone the 
+flight plan from the script including the gps waypoints
+"""
 from dronekit import connect, VehicleMode, LocationGlobalRelative
 import time
 import argparse
