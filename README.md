@@ -27,6 +27,6 @@ With the growing use of unmanned aerial vehicles (UAVs) for commercial and milit
 * Improve collision avoidance
 * Finish API integration to further automate the process.
 * Real-life testing
-* Write paper
+* Follow "Future Plans" section of midterm paper.
 
 #
