@@ -5,7 +5,9 @@
 * Create an algorithm that reads in two GPS points and creates the most efficient 3D path for a UAV to traverse the points given with regard to the time, distance, and energy usage from aerially obtained LiDAR scans and the ablity to change course mid-flight if the best path is obstructed.
 
 ## Progress Report
-* 
+* Finished midterm paper.
+* Finished project website (hosted on GitHub pages)
+* Finished midterm presentation slides.
 
 ## Obstacles
 * 
