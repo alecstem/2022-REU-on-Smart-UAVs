@@ -152,7 +152,7 @@ class astar_3d_algo:
     '''
 
     # Find the path
-    def find_path(self, matrix):
+    def find_path(self, matrix, sqrt):
         frontier = PriorityQueue()
         frontier.put(self.start_point, 0)
 
@@ -170,21 +170,12 @@ class astar_3d_algo:
                 break
             neighbors = self.get_neighbors(current, matrix)
             for next in neighbors:
-                # if (next[0]<41):
-                # print(next[0], next[1], next[2])
-                func = (current[0] - next[0]) * (current[0] - next[0]) + (current[1] - next[1]) * (current[1] - next[1]) + (current[2] - next[2]) * (current[2] - next[2])
-                # new_cost = cost_value[current] + np.sqrt((current[0]-next[0])*(current[0]-next[0]) + (current[1]-next[1])*(current[1]-next[1]) + (current[2]-next[2])*(current[2]-next[2])) + self.cost_map[next]
-                # new_cost = cost_value[current] + self.cost_map[next]
-                # print(new_cost)
-                try:
-                    # new_cost = cost_value[current] + (func ** 0.5) + self.cost_map[(next[2], next[1], next[0])]
+                if sqrt:
+                    func = (current[0] - next[0]) * (current[0] - next[0]) + (current[1] - next[1]) * (
+                                current[1] - next[1]) + (current[2] - next[2]) * (current[2] - next[2])
+                    new_cost = cost_value[current] + (func ** 0.5) + self.cost_map[(next[2], next[1], next[0])]
+                else:
                     new_cost = cost_value[current] + self.cost_map[(next[2], next[1], next[0])]
-                except IndexError as e:
-                    print('current: ', [current])
-                    print('next: ', [next])
-                    print('map size: ', self.map_size)
-                    print(e)
-                    # print(matrix[next[2], next[1], next[0]])
                 if next not in cost_value or new_cost < cost_value[next]:
                     cost_value[next] = new_cost
                     # Dijkstra's Algorithm
@@ -209,7 +200,7 @@ class astar_3d_algo:
 
 # --------------------------------------------------------------------------------
 
-def generate_path(start_point, end_point, map_size, matrix):
+def generate_path(start_point, end_point, map_size, matrix, sqrt):
     # A* Algorithm
     # Define Map
 
@@ -225,6 +216,6 @@ def generate_path(start_point, end_point, map_size, matrix):
 
     # A* Algorithm
     path_finder = astar_3d_algo(map_size, start_point, end_point, matrix)
-    path = path_finder.find_path(matrix)
+    path = path_finder.find_path(matrix, sqrt)
     best_path = [list(item) for item in path]
     return best_path
