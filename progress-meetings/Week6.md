@@ -8,6 +8,7 @@
 * Finished midterm paper.
 * Finished project website (hosted on GitHub pages)
 * Finished midterm presentation slides.
+* Added in an optimized trajectory component to collision avoidance by factoring in distance to end node.
 
 ## Obstacles
 * 
