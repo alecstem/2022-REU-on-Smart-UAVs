@@ -15,7 +15,7 @@ import copy
 import avoidance_detection
 import random
 
-name = "this_file"
+name = "auburn2"
 lasfile = name + ".las"
 lidar_arr = lidar_to_grid.createDEM(name)
 ascfile = name + ".asc"
@@ -26,8 +26,7 @@ max = las.header.max
 x = lidar_arr[0]
 y = lidar_arr[1]
 
-start_node = (5, 5, 40)
-end_node = (x - 5, y - 5, 35)
+
 
 num_of_samples = 5000
 
@@ -46,22 +45,20 @@ def move_drone(x_p, y_p, z_p, between):
     return arr
 
 
-def avoid_obstacle(cur, avoidances, matrix, obj, old_path, old_avoidances, i, vis, end_node):
+def avoid_obstacle(cur, avoidances, matrix, obj, old_path, old_avoidances, i, vis, new_end_node):
     x = len(matrix[0][0])
     y = len(matrix[0])
     z = len(matrix)
     sphere2 = obj[1]
-    print(avoidances[i][0])
     new_x = int(avoidances[i][0])
     new_y = int(avoidances[i][1])
     new_z = int(avoidances[i][2])
-    old_avoidance = old_avoidances[i]
     arr = move_drone([cur[0], new_x], [cur[1], new_y], [cur[2], new_z], 4)
-    updated_path = new_a_star.generate_path((old_avoidance[0], old_avoidance[1], old_avoidance[2]), end_node, (len(matrix[0][0]), len(matrix[0]), len(matrix)), matrix)
+    updated_path = new_a_star.generate_path((old_avoidances[i][0], old_avoidances[i][1], old_avoidances[i][2]),
+                                            new_end_node, (len(matrix[0][0]), len(matrix[0]), len(matrix)), matrix, 0)
     # add bezier curving
     updated_path = bezier_curving.calculate_bezier(updated_path, num_of_samples)
     old_path = copy.deepcopy(updated_path)
-    # print(old_path)
     for pos in arr:
         sphere2.translate((pos[0], pos[1], pos[2]), relative=False)
         vis.update_geometry(sphere2)
@@ -94,7 +91,7 @@ def avoid_obstacle(cur, avoidances, matrix, obj, old_path, old_avoidances, i, vi
     # print('path len: ', len(updated_path))
     # print('avoidance len: ', len(avoidances))
 
-    main_loop(updated_path[1:], avoidances[1:], matrix, obj, old_path, old_avoidances)
+    main_loop(updated_path[1:], avoidances[1:], matrix, obj, old_path, old_avoidances, new_end_node)
 
 
 def rotate_view(vis):
@@ -103,22 +100,40 @@ def rotate_view(vis):
     return False
 
 def find_path():
-    buffer = 8
+    start_node = (x//2, 5, 0)
+    end_node = (x//2, y - (y//2), 0)
+
+    buffer = 1
 
     matrix = bfsonframes.create3DMatrix(ascfile, int(min[2]), int(max[2]), x, y, buffer, 1.0)
+
     matrix = np.array(matrix)
+
+    tmp = start_node[2]
+
+    if matrix[start_node[2]][start_node[1]][start_node[0]] > 0:
+        while matrix[tmp][start_node[1]][start_node[0]] > 0:
+            tmp += 1
+    # tmp += 10
+    new_start_node = start_node[:2] + (tmp,)
+
+    tmp = end_node[2]
+
+    if matrix[end_node[2]][end_node[1]][end_node[0]] > 0:
+        while matrix[tmp][end_node[1]][end_node[0]] > 0:
+            tmp += 1
+    # tmp += 15
+    new_end_node = end_node[:2] + (tmp,)
 
     print(len(matrix))
 
-    print(matrix[start_node[2]][start_node[1]][start_node[0]])
-    print(matrix[end_node[2]][end_node[1]][end_node[0]])
+    # print(matrix[new_start_node[2]][new_start_node[1]][new_start_node[0]])
+    # print(matrix[end_node[2]][end_node[1]][end_node[0]])
 
-    best_path = new_a_star.generate_path(start_node, end_node,
-                                    (len(matrix[0][0]), len(matrix[0]), len(matrix)), matrix)
+    best_path = new_a_star.generate_path(new_start_node, new_end_node,
+                                    (len(matrix[0][0]), len(matrix[0]), len(matrix)), matrix, 1)
     best_path = bezier_curving.calculate_bezier(best_path, num_of_samples)
     avoidances = avoidance_detection.find_avoidances(matrix, best_path)
-    # print(avoidances)
-    # print('best path: ', best_path)
     lines = []
     old_path = copy.deepcopy(best_path)
     old_avoidances = copy.deepcopy(avoidances)
@@ -127,16 +142,14 @@ def find_path():
     geom = o3d.geometry.PointCloud()
     geom.points = o3d.utility.Vector3dVector(point_data)
 
-
-
-    for i in range(len(best_path)):
+    for i in range(0, len(best_path)):
         best_path[i][0] = (best_path[i][0]+min[0]) * 100
         best_path[i][1] = (max[1]-best_path[i][1]) * 100
         best_path[i][2] = (min[2]+best_path[i][2]) * 100
         avoidances[i][0] = (avoidances[i][0]+min[0]) * 100
         avoidances[i][1] = (max[1]-avoidances[i][1]) * 100
         avoidances[i][2] = (min[2]+avoidances[i][2]) * 100
-
+        # print(avoidances[i], old_avoidances[i])
 
     # print(avoidances)
 
@@ -154,9 +167,9 @@ def find_path():
     test = copy.deepcopy(best_path)
     test2 = copy.deepcopy(old_path)
 
-    print(las_to_lat_long.convert_to_latlon(test, test2))
+    # print(las_to_lat_long.convert_to_latlon(test, test2))
 
-    return [lines, best_path, geom, matrix, avoidances, old_path, old_avoidances]
+    return [lines, best_path, geom, matrix, avoidances, old_path, old_avoidances, new_end_node]
 
 
 def init_vis(lines, best_path, geom):
@@ -169,12 +182,10 @@ def init_vis(lines, best_path, geom):
     vis = o3d.visualization.Visualizer()
     vis.create_window()
 
-    # o3d.visualization.draw_geometries_with_animation_callback(point_data, rotate_view(vis))
-
     sphere1 = o3d.geometry.TriangleMesh.create_sphere(radius=50.0, resolution=200)
     sphere2 = copy.deepcopy(sphere1).translate((best_path[0][0], best_path[0][1], best_path[0][2]), relative=False)
 
-    obstacle_positions = [best_path[len(best_path) - (len(best_path)//2)], best_path[len(best_path) - (len(best_path)//3)]]
+    obstacle_positions = [best_path[len(best_path) - (len(best_path)//2)], best_path[len(best_path) - (len(best_path)//3) - 850]]
     obstacle1 = o3d.geometry.TriangleMesh.create_sphere(radius=100.0, resolution=200)
     obstacle2 = copy.deepcopy(obstacle1).translate((obstacle_positions[0][0], obstacle_positions[0][1], obstacle_positions[0][2]),
                                                    relative=False)
@@ -190,14 +201,20 @@ def init_vis(lines, best_path, geom):
     vis.add_geometry(sphere2)
     vis.add_geometry(geom)
     vis.add_geometry(line_set)
-    vis.add_geometry(obstacle2)
+    # vis.add_geometry(obstacle2)
     vis.add_geometry(obstacle3)
     vis.add_geometry(line_set2)
     vis.add_geometry(avoid_path)
     return [obstacle_positions, sphere2, line_set2, avoid_path, vis, obstacle2]
 
 
-def main_loop(best_path, avoidances, matrix, obj, old_path, old_avoidances):
+ok = True
+ok2 = True
+
+
+def main_loop(best_path, avoidances, matrix, obj, old_path, old_avoidances, end_node):
+    global ok
+    global ok2
     obstacle_positions = obj[0]
     sphere2 = obj[1]
     line_set2 = obj[2]
@@ -206,23 +223,11 @@ def main_loop(best_path, avoidances, matrix, obj, old_path, old_avoidances):
     obstacle2 = obj[5]
     vel = 50
     baseline = obstacle_positions[0][0]
-    view = o3d.visualization.ViewControl()
 
     while True:
         for i in range(0, len(best_path)-3, 25):
-            ctr = vis.get_view_control()
-            # ctr.rotate(3.0, 0)
-            x1 = best_path[i][0]
-            x2 = best_path[i+1][0]
-
-            y1 = best_path[i][1]
-            y2 = best_path[i+1][1]
-
-            z1 = best_path[i][2]
-            z2 = best_path[i+1][2]
-
             obstacle_positions[0][0] += vel
-            if obstacle_positions[0][0] <= baseline-500 or obstacle_positions[0][0] > baseline+500:
+            if obstacle_positions[0][0] <= baseline-1500 or obstacle_positions[0][0] > baseline+1500:
                 vel *= -1
 
             obstacle2.translate((obstacle_positions[0][0], obstacle_positions[0][1], obstacle_positions[0][2]), relative=False)
@@ -254,16 +259,24 @@ def main_loop(best_path, avoidances, matrix, obj, old_path, old_avoidances):
             vis.poll_events()
             vis.update_renderer()
             # view.camera_local_rotate(50, 50)
-            if 0.1 <= val < 500.0 or 0.1 <= val1 < 500.0:
+            if 0.1 <= val1 < 500.0 and ok:
                 sphere2.paint_uniform_color([1, 0.706, 0])
-                # print(old_path[i])
-                matrix[round(old_path[i+10][2])][round(old_path[i+10][1])][round(old_path[i+10][0])] = 255
-                # avoid_obstacle(best_path[i], avoidances, matrix, obj, old_path, old_avoidances, i, vis, end_node)
+                # need a function to do back conversions to approximate location of obj
+                # matrix[round(old_path[i][2])][round(old_path[i][1])][round(old_path[i][0])] = 255
+                print('old avoidances: ', old_avoidances)
+                ok = False
+                avoid_obstacle(best_path[i], avoidances, matrix, obj, old_path, old_avoidances, i, vis, end_node)
+            elif 0.1 <= val < 500.0 and ok2:
+                sphere2.paint_uniform_color([1, 0.706, 0])
+                # need a function to do back conversions to approximate location of obj
+                # matrix[round(old_path[i][2])][round(old_path[i][1])][round(old_path[i][0])] = 255
+                print('old avoidances: ', old_avoidances)
+                ok2 = False
+                avoid_obstacle(best_path[i], avoidances, matrix, obj, old_path, old_avoidances, i, vis, end_node)
             else:
                 sphere2.paint_uniform_color([0.255, 0.255, 0.255])
 
 
 components = find_path()
 objects = init_vis(components[0], components[1], components[2])
-main_loop(components[1], components[4], components[3], objects, components[5], components[6])
-
+main_loop(components[1], components[4], components[3], objects, components[5], components[6], components[7])
