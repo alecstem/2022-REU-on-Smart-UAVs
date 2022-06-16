@@ -19,7 +19,7 @@ def find_avoidances(matrix, best_path):
     dirs = [[1, 1, 1], [1, -1, 1],
             [-1, 1, 1], [-1, -1, 1],
             [1, 1, -1], [1, -1, -1],
-            [-1, 1, -1], [-1, -1, -1], [0, 1, 1], [1, 0, 1], [-1, 0, 1], [0, -1, 1]]
+            [-1, 1, -1], [-1, -1, -1], [0, 1, 1], [1, 0, 1], [-1, 0, 1], [0, -1, 1], [0, 0, 1], [0, 0, -1]]
     best_avoidances = []
     for path in best_path:
         best_avoidance = []
@@ -28,7 +28,7 @@ def find_avoidances(matrix, best_path):
             z = round(path[2])
             y = round(path[1])
             x = round(path[0])
-            t = 6
+            t = 4
             k = copy.deepcopy(t)
             while 0 <= z < map_size[2]-1 and 0 <= y < map_size[1]-1 and \
                     0 <= x < map_size[0]-1 and matrix[z][y][x] == 0 and t > 0:
