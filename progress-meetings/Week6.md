@@ -9,9 +9,13 @@
 * Finished project website (hosted on GitHub pages)
 * Finished midterm presentation slides.
 * Added in an optimized trajectory component to collision avoidance by factoring in distance to end node.
+* Created demos for collison avoidence and our process.
+* Got an almost complete process created from start to finish.
 
 ## Obstacles
-* 
+* Loading in the correct .las files.
+* Debuging collison avoidence algorithem.
+* Debuging complete process test.
 
 ## Future Objectives
 * Work more on collision avoidance.
@@ -22,4 +26,4 @@
 * Start testing in real life.
 
 ## Weekly Evaluation
-* 
+* This was another solid week of progress. We were able to complete our midterm deliverables with confidence and we were able to generate working demos of our process. We plan to start real life testing now that we have a confident and reliable system inplace this coming week. Overall we are encouraged by the way our reasurch has devloped and hope to generate publishable results in our simulations and real life testing.
