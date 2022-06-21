@@ -29,21 +29,27 @@ class astar_3d_algo:
 
     # Get neighbors of current position
     def get_neighbors(self, current, matrix):
+        e_map = {'horizontal': 1.0, 'horizontal_angle': 1.3, 'down': 1.3, 'down_cardinal': 1.5, 'down_angle': 1.7, 'up': 8.0, 'up_cardinal': 8.4, 'up_angle': 8.8}
+        d = dict()
         neighbors = set()
         # current[2] = z, current[1] = y, current[0]=x
         # print('matrix size:', [len(matrix), len(matrix[0]), len(matrix[0][0])])
         # Right
         if current[0] + 1 < self.map_size[0] and matrix[current[2]][current[1]][current[0]+1] == 0:
             neighbors.add((current[0] + 1, current[1], current[2]))
+            d[(current[0] + 1, current[1], current[2])] = e_map['horizontal']
         # Up
         if current[1] - 1 >= 0 and matrix[current[2]][current[1]-1][current[0]] == 0:
             neighbors.add((current[0], current[1] - 1, current[2]))
+            d[(current[0], current[1] - 1, current[2])] = e_map['up']
         # Left
         if current[0] - 1 >= 0 and matrix[current[2]][current[1]][current[0]-1] == 0:
             neighbors.add((current[0] - 1, current[1], current[2]))
+            d[(current[0] - 1, current[1], current[2])] = e_map['horizontal']
         # Down
         if current[1] + 1 < self.map_size[1] and matrix[current[2]][current[1]+1][current[0]] == 0:
             neighbors.add((current[0], current[1] + 1, current[2]))
+            d[(current[0], current[1] + 1, current[2])] = e_map['down']
         # ↗
         if current[0] + 1 < self.map_size[0] and current[1] - 1 >= 0 and \
                 matrix[current[2]][current[1]-1][current[0]+1] == 0:
@@ -175,6 +181,7 @@ class astar_3d_algo:
                                 current[1] - next[1]) + (current[2] - next[2]) * (current[2] - next[2])
                     new_cost = cost_value[current] + (func ** 0.5) + self.cost_map[(next[2], next[1], next[0])]
                 else:
+                    # new_cost = cost_value[current] + self.cost_map[(next[2], next[1], next[0])] + d[tuple]
                     new_cost = cost_value[current] + self.cost_map[(next[2], next[1], next[0])]
                 if next not in cost_value or new_cost < cost_value[next]:
                     cost_value[next] = new_cost
@@ -185,7 +192,7 @@ class astar_3d_algo:
                     frontier.put(next, priority)
                     came_from[next] = current
         et = time.time()
-        print((et - st))
+        print('TIME: ', (et - st))
 
         # Reconstruction path --> (Backwards from the goal to the start)
         current = self.end_point
@@ -201,20 +208,6 @@ class astar_3d_algo:
 # --------------------------------------------------------------------------------
 
 def generate_path(start_point, end_point, map_size, matrix, sqrt):
-    # A* Algorithm
-    # Define Map
-
-    '''
-    for z1 in range(len(matrix)):
-        for y1 in range(len(matrix[0])):
-            for x1 in range(len(matrix[0][0])):
-                if matrix[z1, y1, x1] == 0:
-                    matrix[z1, y1, x1] = 255
-                else:
-                    matrix[z1, y1, x1] = 0
-    '''
-
-    # A* Algorithm
     path_finder = astar_3d_algo(map_size, start_point, end_point, matrix)
     path = path_finder.find_path(matrix, sqrt)
     best_path = [list(item) for item in path]
