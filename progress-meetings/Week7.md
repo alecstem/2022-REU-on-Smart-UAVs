@@ -6,7 +6,7 @@
 
 ## Progress Report
 * Worked more on collision avoidance by introducing set of avoidance trajectories based on the type of obstacle encountered. (bigger object = horizontal mvmt preferred)
-* Introduced energy into pathfinding algorithm by basing cost of node by distance so far to node, heuristic to end node, and now the energy required by the UAV to move to that node. ( F(n) = g(n) + h(n) + e(n) )
+* Introduced energy into pathfinding algorithm by basing cost of node by distance so far to node, heuristic to end node, and now the energy required by the UAV to move to that neighboring node. ( F(n) = g(n) + h(n) + e(n) )
 * 
 
 ## Obstacles
