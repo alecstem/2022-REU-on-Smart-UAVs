@@ -7,7 +7,8 @@
 ## Progress Report
 * Worked more on collision avoidance by introducing set of avoidance trajectories based on the type of obstacle encountered. (bigger object = horizontal mvmt preferred)
 * Introduced energy into pathfinding algorithm by basing cost of node by distance so far to node, heuristic to end node, and now the energy required by the UAV to move to that neighboring node. ( F(n) = g(n) + h(n) + e(n) )
-* 
+* Created a process that uses the api to find the database and uses the input cooridnates to remotly acess the website and download the las file for the polygon created. Then with the intigration of our previous code we were able to create a complete start to end process!
+* We also were able to start testing difrent hurestics and get data from that and from the energy testing for compairsons.
 
 ## Obstacles
 * 
