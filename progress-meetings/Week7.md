@@ -9,6 +9,7 @@
 * Introduced energy into pathfinding algorithm by basing cost of node by distance so far to node, heuristic to end node, and now the energy required by the UAV to move to that neighboring node. ( F(n) = g(n) + h(n) + e(n) )
 * Created a process that uses the API to find a database that contains the search polygon and downloads the .las file from the website automatically.
 * Combined this with previous code to create a start to end process that uses all datasets available on OT.
+* Made collision avoidance trajectories take into account the heading of UAV.
 * Started testing different heuristics for statistical analysis.
 
 ## Obstacles
