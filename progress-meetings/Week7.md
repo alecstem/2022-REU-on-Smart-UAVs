@@ -26,4 +26,4 @@
 * Start testing in real life.
 
 ## Weekly Evaluation
-* 
+* This week was a very sucessful week. We were able to finish the complete process and smooth it out this week and this then allowed for us to do the various types of testing for some comparison data. We were also able to get an almost fully functioning form of premitive collsion avoidance working this week. Over all everything that we set out to accomplish has been finsihed and this next week we plan to test out some new things with our process to try and find the most optimal path possible. We hope to finish these next few weeks as strong as this week.
