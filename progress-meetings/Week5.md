@@ -2,16 +2,16 @@
 
 ## End Goal
 
-* Create an algorithm that reads in two GPS points and creates the most efficient 3D path for a UAV to traverse the points given with regard to the time, distance, and energy usage from aerially obtained LiDAR scans and the ablity to change course mid-flight if the best path is obstructed.
+* Create an algorithm that reads in two GPS points and creates the most efficient 3D path for a UAV to traverse the points given concerning the time, distance, and energy usage from aerially obtained LiDAR scans and the ability to change course mid-flight if the best path is obstructed.
 
 ## Progress Report
-* Updated 3D obstacle matrix if obstacle is detected before recalculating best path.
+* Updated 3D obstacle matrix if an obstacle is detected before recalculating the best path.
 * Finished introduction for midterm paper.
 * Finished problem statement and motivation for midterm paper.
 * Finished Literary Analysis for midterm paper.
-* Working on process section for midterm paper.
+* Working on the process section for the midterm paper.
 * Finished presentation slides for this week.
-* Created website for midterm.
+* Created website for the midterm.
 
 ## Obstacles
 * Improving our understanding of previous research and process.
@@ -20,10 +20,10 @@
 ## Future Objectives
 * Work more on collision avoidance.
 * Fix the path smoothing issues.
-* Improve speed of program.
+* Improve the speed of the program.
 * Get access to the rest of the LiDAR data automatically.
 * Finish the midterm assignments.
 * Start testing in real life.
 
 ## Weekly Evaluation
-* This week was a very productive week. We built a solid framework for all of the midterm assigments and we had a sucessful test run from start to simulation of our process. We plan to get the whole thing working in one smooth process and finish the midterm assigments this upcoming week and prepare for real life testing. Over all another great week and we hope to keep the reasurch moving like it has this first half.
+* This week was very productive. We built a solid framework for all of the midterm assignments and we had a successful test run from start to simulation of our process. We plan to get the whole thing working in one smooth process and finish the midterm assignments this upcoming week and prepare for real-life testing. Overall another great week and we hope to keep the research moving like it has this first half.
