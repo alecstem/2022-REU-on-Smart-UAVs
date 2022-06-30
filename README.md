@@ -32,7 +32,7 @@ show the validity of this method.
 * Simulate UAV moving through path
 * Convert pixel position to GPS way point and send this information to UAV.
 * Start collision avoidence in real time on the simulation.
-* 
+
 ##### Future Work
 * While our process works in simulation. Real-life testing and the continuation of testing different factors to improve optimality should be tested.  
 * Our process could be further by testing out different number of allowed points for the path to allow for the drone to fly faster. 
