@@ -5,10 +5,19 @@ Auburn University 2022 REU on Smart UAVs
 
 ###### Alec Pugh & Luke Bower
 
-### UAV Path Planning using Aerially Obtained Point Clouds
+### 3D UAV Path Planning Using Aerially Obtained Point Clouds
 
 #### Abstract
-With the growing use of unmanned aerial vehicles (UAVs) for commercial and military operations, path efficiency remains an utmost concern for battery and time preservation. This paper presents a method for three-dimensional (3D) path planning using point clouds obtained from the USGS 3DEP (United States Geological Survey 3D Elevation Program) dataset via OpenTopography. The path itself is obtained using the A* algorithm, with additional modifications implemented to account for path smoothing, UAV size, and energy consumption. We also introduce a collision avoidance method using the precomputed data to account for unforeseen obstacles not rendered within the point cloud. The method presented is designed specifically for point clouds obtained via LiDAR (Light Detection and Ranging) scans from aircraft, where cavities may be present underneath the surface layer. Simulations and physical testing using waypoint transmission show the validity of this method. 
+With the growing use of unmanned aerial vehicles (**UAVs**) for commercial and military operations,
+path efficiency remains an utmost concern for battery and time preservation. This paper presents a
+method for three dimensional (**3D**) path planning using point clouds obtained from the USGS 3DEP
+(**United States Geological Survey 3D Elevation Program**) dataset via Open Topography. The
+path itself is obtained using the A* algorithm, with additional modifications implemented to account for
+path smoothing, UAV size, and energy consumption. We also introduce a collision avoidance method
+using the precomputed data to account for unforeseen obstacles not rendered within the point cloud. The
+method presented is designed specifically for point clouds obtained via LiDAR (**Light Detection and
+Ranging**) scans from aircraft, where cavities may be present underneath the surface layer. Simulations
+show the validity of this method.
 
 
 <p align="center">
@@ -24,7 +33,7 @@ With the growing use of unmanned aerial vehicles (UAVs) for commercial and milit
 * Convert pixel position to GPS way point and send this information to UAV.
 * Start collision avoidence in real time on the simulation.
 * 
-##### Todo
+##### Future Work
 * While our process works in simulation. Real-life testing and the continuation of testing different factors to improve optimality should be tested.  
 * Our process could be further by testing out different number of allowed points for the path to allow for the drone to fly faster. 
 * Add more advanced forms of collision avoidance.
