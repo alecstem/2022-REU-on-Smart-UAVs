@@ -16,17 +16,17 @@ With the growing use of unmanned aerial vehicles (UAVs) for commercial and milit
 </p>
 
 ### General Process
-
 * Download a point cloud in .las format from OpenTopography.
 * Convert .las to a gridded DEM image of 1m per pixel.
-* Run A* on every height layer to generate the optimal flight path for each crossection.
 * Add buffer to obstacles using BFS to account for drone size. (or another way to smooth the line)
+* Run adapted A* on every height layer to generate the optimal flight path for each crossection.
 * Simulate UAV moving through path
 * Convert pixel position to GPS way point and send this information to UAV.
+* Start collision avoidence in real time on the simulation.
+* 
 ##### Todo
-* Improve collision avoidance
-* Finish API integration to further automate the process.
-* Real-life testing
-* Follow "Future Plans" section of midterm paper.
+* While our process works in simulation. Real-life testing and the continuation of testing different factors to improve optimality should be tested.  
+* Our process could be further by testing out different number of allowed points for the path to allow for the drone to fly faster. 
+* Add more advanced forms of collision avoidance.
 
-#
+
