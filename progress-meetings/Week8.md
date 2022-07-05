@@ -5,15 +5,16 @@
 * Create an algorithm that reads in two GPS points and creates the most efficient 3D path for a UAV to traverse the points given concerning the time, distance, and energy usage from aerially obtained LiDAR scans and the ability to change course mid-flight if the best path is obstructed.
 
 ## Progress Report
-* Got a fully working project able to adapt to all USGS files.
-* Finished the collision avoidence to efficently work with all three obstical types.
-* Finsihed the poster.
+* Used Selenium and OpenTopography API to remotely download all USGS files after inputting search polygon.
+* Created code to parse .json file outputted from API to make sure datasets actually contained search polygon (API returns some datasets that don't contain any points for some reason)
+* Modified collision avoidance to perform horizontal movement in most cases due to more success when testing.
+* Finished the poster.
 * Started working on the final draft for the paper.
 * Started working on the final presentation.
 
 ## Obstacles
 * Polishing off the code.
-* Getting the collision avoidence to figure if an obstical is big or not to change avoience precidures.
+* Getting the collision avoidence to figure if an obstacle is big or not to change avoidance precidures.
 
 ## Future Objectives
 * Finish the final deliverables
