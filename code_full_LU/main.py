@@ -76,10 +76,10 @@ button = driver.find_element_by_link_text('Sign In')
 button.click()
 
 i = driver.find_element_by_name('userId')
-i.send_keys('lcb0035@uah.edu')
+i.send_keys('your_username')
 
 k = driver.find_element_by_name('password')
-k.send_keys('Open4me03!')
+k.send_keys('your_password')
 
 button1 = driver.find_element_by_name('submit')
 button1.click()
@@ -107,7 +107,7 @@ if os.path.exists("points.las"):
 else:
   print("The file does not exist")
 
-os.rename(r"C:\Users\lcbba\Downloads\points.las", r"C:\Users\lcbba\PycharmProjects\full_test\full_test\points.las")
+os.rename(r"path\to\downloads\points.las", r"desired\location\points.las")
 
 driver.minimize_window()
 os.system("taskkill /im chrome.exe /f")
