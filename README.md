@@ -33,6 +33,9 @@ show the validity of this method.
 * Convert pixel position to GPS way point and send this information to UAV.
 * Start collision avoidence in real time on the simulation.
 
+### About
+This repo has two directorys that holds the code for the collision avoidance system and the full simulation not including the collision avoidance activated. To use the CAS code you simply need to change the name of the desired file in path_visulation.py and run this script(make sure the las file is in the same folder as the script). To use the full simulation you need to run main and enter in the start and end latitude and longitude points along with changing the download paths in main, your opentopography user name, your opentopography password, and in drone_testing.py change the cmd definition to your path. This repo also holds pictures of our process and the weekly progress reports.
+
 ##### Future Work
 * While our process works in simulation. Real-life testing and the continuation of testing different factors to improve optimality should be tested.  
 * Our process could be further by testing out different number of allowed points for the path to allow for the drone to fly faster. 
